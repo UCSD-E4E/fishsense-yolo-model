@@ -86,7 +86,6 @@ You can find the outputted image(s) showing the detections saved within the 'det
 
 ### Result Video
 Video saves wherever you point --output flag to. If you don't set the flag then your video will not be saved with detections on it.
-<p align="center"><img src="data/helpers/demo.gif"\></p>
 
 Please look at the other flags in detect for more customization like conf and iou scores.
 
