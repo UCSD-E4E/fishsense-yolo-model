@@ -39,8 +39,6 @@ Species_fit is trained from various pictures of the same fish in an aquarium.
 Once you download the weights, place them in the data folder
 
 These two videos are helpful for understanding what is going on:
-
-## Using Custom Trained YOLOv4 Weights
 <strong>Learn How To Train Custom YOLOv4 Weights here: https://www.youtube.com/watch?v=mmj3nxGT2YQ </strong>
 
 <strong>Watch me Walk-Through using Custom Model in TensorFlow :https://www.youtube.com/watch?v=nOIVxi5yurE </strong>
