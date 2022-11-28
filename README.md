@@ -81,8 +81,6 @@ python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yol
 
 ### Result Image(s) (Regular TensorFlow)
 You can find the outputted image(s) showing the detections saved within the 'detections' folder.
-#### Pre-trained YOLOv4 Model Example
-<p align="center"><img src="data/helpers/result.png" width="640"\></p>
 
 ### Result Video
 Video saves wherever you point --output flag to. If you don't set the flag then your video will not be saved with detections on it.
