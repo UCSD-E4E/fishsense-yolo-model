@@ -1,0 +1,36 @@
+Follow these steps to run the code
+
+1.) # Tensorflow CPU
+conda env create -f conda-cpu.yml
+conda activate yolov4-cpu
+
+
+2.)# Convert darknet weights to tensorflow
+## yolov4
+python save_model.py --weights ./data/fish.weights --output ./checkpoints/yolov4-416 --input_size 416 --model yolov4 
+
+Now you can run the code on a picture, multiple pictures, video, or webcam.
+You can also use the follwoing flags, --count to count objects, --info for bbox length, and --crop to make a new image of each detection
+
+# Run yolov4 tensorflow model
+python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/run38/img-Color180.png
+
+Note: You can also run the detector on multiple images at once by changing the --images flag like such --images "./data/images/kite.jpg, ./data/images/dog.jpg"
+
+python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images "./data/images/run32/img-Color80.png, ./data/images/run32/img-Color100.png, ./data/images/run32/img-Color101.png, ./data/images/run32/img-Color102.png, ./data/images/run32/img-Color103.png, ./data/images/run32/img-Color104.png, ./data/images/run32/img-Color105.png, ./data/images/run32/img-Color106.png, ./data/images/run32/img-Color107.png, ./data/images/run32/img-Color108.png, ./data/images/run32/img-Color109.png, ./data/images/run32/img-Color110.png, ./data/images/run32/img-Color111.png, ./data/images/run32/img-Color112.png, ./data/images/run32/img-Color113.png, ./data/images/run32/img-Color114.png, ./data/images/run32/img-Color115.png, ./data/images/run32/img-Color116.png, ./data/images/run32/img-Color117.png, ./data/images/run32/img-Color118.png, ./data/images/run32/img-Color119.png, ./data/images/run32/img-Color120.png, ./data/images/run32/img-Color121.png, ./data/images/run32/img-Color122.png, ./data/images/run32/img-Color123.png, ./data/images/run32/img-Color124.png, ./data/images/run32/img-Color125.png, ./data/images/run32/img-Color126.png, ./data/images/run32/img-Color127.png, ./data/images/run32/img-Color128.png, ./data/images/run32/img-Color129.png, ./data/images/run32/img-Color130.png, ./data/images/run32/img-Color131.png, ./data/images/run32/img-Color132.png, ./data/images/run32/img-Color133.png, ./data/images/run32/img-Color134.png, ./data/images/run32/img-Color135.png, ./data/images/run32/img-Color136.png, ./data/images/run32/img-Color137.png, ./data/images/run32/img-Color138.png, ./data/images/run32/img-Color139.png, ./data/images/run32/img-Color140.png, ./data/images/run32/img-Color141.png, ./data/images/run32/img-Color142.png, ./data/images/run32/img-Color143.png, ./data/images/run32/img-Color144.png, ./data/images/run32/img-Color145.png, ./data/images/run32/img-Color146.png, ./data/images/run32/img-Color147.png, ./data/images/run32/img-Color148.png, ./data/images/run32/img-Color149.png, ./data/images/run32/img-Color150.png, ./data/images/run32/img-Color151.png, ./data/images/run32/img-Color152.png, ./data/images/run32/img-Color153.png, ./data/images/run32/img-Color154.png, ./data/images/run32/img-Color155.png, ./data/images/run32/img-Color156.png, ./data/images/run32/img-Color157.png, ./data/images/run32/img-Color158.png, ./data/images/run32/img-Color159.png, ./data/images/run32/img-Color160.png, ./data/images/run32/img-Color161.png, ./data/images/run32/img-Color162.png, ./data/images/run32/img-Color163.png, ./data/images/run32/img-Color164.png, ./data/images/run32/img-Color165.png, ./data/images/run32/img-Color166.png, ./data/images/run32/img-Color167.png, ./data/images/run32/img-Color168.png, ./data/images/run32/img-Color169.png, ./data/images/run32/img-Color170.png, ./data/images/run32/img-Color171.png, ./data/images/run32/img-Color172.png, ./data/images/run32/img-Color173.png, ./data/images/run32/img-Color174.png, ./data/images/run32/img-Color175.png, ./data/images/run32/img-Color176.png, ./data/images/run32/img-Color177.png, ./data/images/run32/img-Color178.png, ./data/images/run32/img-Color179.png, ./data/images/run32/img-Color180.png, ./data/images/run32/img-Color181.png, ./data/images/run32/img-Color182.png, ./data/images/run32/img-Color183.png, ./data/images/run32/img-Color184.png, ./data/images/run32/img-Color185.png, ./data/images/run32/img-Color186.png, ./data/images/run32/img-Color187.png, ./data/images/run32/img-Color188.png, ./data/images/run32/img-Color189.png, ./data/images/run32/img-Color190.png, ./data/images/run32/img-Color191.png, ./data/images/run32/img-Color192.png, ./data/images/run32/img-Color193.png, ./data/images/run32/img-Color194.png, ./data/images/run32/img-Color195.png, ./data/images/run32/img-Color196.png, ./data/images/run32/img-Color197.png, ./data/images/run32/img-Color198.png, ./data/images/run32/img-Color199.png, ./data/images/run32/img-Color200.png, ./data/images/run32/img-Color201.png " --output ./detections/test3results/
+
+
+# Run yolov4 on video
+python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --video ./data/video/video.mp4 --output ./detections/results.avi
+
+# Run yolov4 on webcam
+python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --video 0 --output ./detections/results.avi
+
+
+python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --dir "./data/images/pacifico/" --output "./detections/test/"
+
+--count
+
+--info
+
+--crop
